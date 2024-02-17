@@ -3,13 +3,10 @@ import { structureTool } from 'sanity/structure';
 import { defineConfig } from "sanity";
 import schemas from './sanity/schemas';
 
-const projectId = process.env.SANITY_PROJECT!;
-const dataset = process.env.SANITY_DATASET!;
-
 const config = defineConfig({
-    projectId,
-    dataset,
-    title: 'My Personal Website',
+    projectId: 'p50gl6b8',
+    dataset: 'production',
+    title: 'Greg\'s website',
     apiVersion: '2024-02-15',
     basePath: '/admin',
     plugins: [structureTool(), visionTool()],

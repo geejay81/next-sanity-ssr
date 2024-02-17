@@ -21,7 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="max-w-3xl mx-auto py-10">
+      <body className="max-w-3xl mx-auto px-5 py-5">
         <nav className="flex items-center justify-between">
           <Link href="/" className="bg-gradient-to-r from-blue-500 to-fuchsia-600
             bg-clip-text text-transparent text-lg font-bold">Greg</Link>

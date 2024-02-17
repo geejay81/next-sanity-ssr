@@ -2,6 +2,25 @@ import { Project } from './../types/project';
 import { createClient, groq } from "next-sanity";
 import clientConfig from './config/client-config';
 import { Page } from './../types/page';
+import { Profile } from '@/types/profile';
+
+export async function getProfile(): Promise<Profile> {
+    return createClient(clientConfig).fetch(
+      groq`*[_type == "profile"][0] {
+        _id,
+        fullName,
+        headline,
+        profileImage {alt, "image": asset->url},
+        shortBio,
+        location,
+        fullBio,
+        email,
+        "resumeURL": resumeURL.asset->url,
+        socialLinks,
+        skills
+      }`
+    );
+  }
 
 export async function getProjects(): Promise<Project[]> {
     return createClient(clientConfig).fetch(
