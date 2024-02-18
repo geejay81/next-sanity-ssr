@@ -8,7 +8,7 @@ export default async function RecentBlogs() {
     const blogs = await posts.getPosts();
 
     return (
-        <React.Fragment>
+        <section>
             <h2 className="mt-24 font-bold text-gray-100 text-3xl">Recent blog posts</h2>
             <ul>
                 {blogs.map((post: Post) => (
@@ -19,6 +19,6 @@ export default async function RecentBlogs() {
                     </li>
                 ))}
             </ul>
-        </React.Fragment>
+        </section>
     );
 }
