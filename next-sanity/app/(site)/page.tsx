@@ -1,4 +1,5 @@
 import Profile from "@/components/profile";
+import RecentBlogs from "@/components/recent-blogs";
 import { getProjects } from "@/sanity/sanity-utils"
 import Image from 'next/image'
 import Link from "next/link";
@@ -14,6 +15,9 @@ export default async function Home() {
           bg-clip-text text-transparent">Greg!</span></h1>
 
       <p className="mt-3 text-xl text-gray-100">Welcome to my website!</p>
+      
+      <RecentBlogs />
+      
       <h2 className="mt-24 font-bold text-gray-100 text-3xl">My projects</h2>
       <div className="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project) => (
