@@ -10,7 +10,7 @@ async function getPosts(): Promise<Post[]> {
             title,
             publishedAt,
             "slug": slug.current
-        }`
+        } | order(publishedAt desc)`
     )
 }
 

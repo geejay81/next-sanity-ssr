@@ -12,7 +12,7 @@ export default async function RecentBlogs() {
             <h2 className="mt-24 font-bold text-gray-100 text-3xl">Recent blog posts</h2>
             <ul>
                 {blogs.map((post: Post) => (
-                    <li key={post._id}>
+                    <li className="list-disc my-5 mx-5 hover:underline focus:underline" key={post._id}>
                         <Link href={`/posts/${post.slug}`}>
                             {post.title}
                         </Link>

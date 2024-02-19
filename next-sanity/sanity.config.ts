@@ -4,11 +4,13 @@ import { structureTool } from 'sanity/structure';
 import { defineConfig } from "sanity";
 import schemas from './sanity/schemas';
 
+const apiVersion = 'v1'; //new Date().toISOString().slice(0, 10);
+
 const config = defineConfig({
     projectId: 'p50gl6b8',
     dataset: 'production',
-    title: 'Greg\'s website',
-    apiVersion: '2024-02-18',
+    title: 'Greg website',
+    apiVersion: apiVersion,
     basePath: '/admin',
     plugins: [structureTool(), visionTool(), codeInput()],
     schema: { types: schemas }

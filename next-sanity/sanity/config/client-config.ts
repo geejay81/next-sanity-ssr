@@ -6,7 +6,7 @@ const dataset = process.env.SANITY_DATASET;
 const clientConfig = {
     projectId,
     dataset,
-    apiVersion,
+    apiVersion: 'v1',
     useCdn: true
 }
 
