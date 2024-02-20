@@ -18,7 +18,11 @@ export async function getProfile(): Promise<Profile> {
         "resumeURL": resumeURL.asset->url,
         socialLinks,
         skills
-      }`
+      }`,
+      {},
+      {
+          next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+      }
     );
   }
 
@@ -33,7 +37,11 @@ export async function getProjects(): Promise<Project[]> {
             "alt": image.asset->alt,
             url,
             content
-        }`
+        }`,
+        {},
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     )
 }
 
@@ -49,7 +57,10 @@ export async function getProject(slug: string): Promise<Project> {
             url,
             content
         }`
-        , { slug }
+        , { slug },
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     )
 }
 
@@ -60,7 +71,11 @@ export async function getPages(): Promise<Page[]> {
             _createdAt,
             title,
             "slug": slug.current
-        }`
+        }`,
+        {},
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     );
 }
 
@@ -73,6 +88,9 @@ export async function getPage(slug: string): Promise<Page> {
             "slug": slug.current,
             content
         }`,
-        { slug }
+        { slug },
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     );
 }

@@ -1,5 +1,5 @@
 import { codeInput } from '@sanity/code-input';
-import {visionTool} from '@sanity/vision';
+import { visionTool } from '@sanity/vision';
 import { structureTool } from 'sanity/structure';
 import { defineConfig } from "sanity";
 import schemas from './sanity/schemas';

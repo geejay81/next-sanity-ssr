@@ -7,7 +7,7 @@ const clientConfig = {
     projectId,
     dataset,
     apiVersion: 'v1',
-    useCdn: true
+    useCdn: true,
 }
 
 export default clientConfig;

@@ -10,7 +10,11 @@ async function getPosts(): Promise<Post[]> {
             title,
             publishedAt,
             "slug": slug.current
-        } | order(publishedAt desc)`
+        } | order(publishedAt desc)`,
+        {},
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     )
 }
 
@@ -24,7 +28,10 @@ async function getPost(slug: string): Promise<Post> {
             "slug": slug.current,
             content
         }`,
-        { slug }
+        { slug },
+        {
+            next: { revalidate: Number(process.env.REVALIDATE_CACHE_SECONDS) }
+        }
     )
 }
 const posts = {
